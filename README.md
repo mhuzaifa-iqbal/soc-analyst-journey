@@ -7,7 +7,7 @@
 -goal : soc analyst role
 
 ## progress
-- day 1 - 21 completed
+- day 1 - 38 completed
 -learning : networking , linux , security tools
 
 ##skills
