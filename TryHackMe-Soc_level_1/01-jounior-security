@@ -1,0 +1,18 @@
+Room: Junior Security Analyst Intro
+Platform: TryHackMe — SOC Level 1 path
+Date: June 30, 2026
+Status: Completed (100%)
+
+What I learned:
+- Walked through a day in the life of a SOC analyst
+- Saw the real workflow: monitor alerts, triage, escalate, document
+- Got a feel for the actual responsibilities of a Tier 1 analyst role
+
+Key concepts:
+- SOC analysts are the first line of defense in detecting threats
+- Triage = deciding what's urgent vs noise
+- Escalation = passing confirmed incidents to L2/L3
+- Documentation is a core daily task, not optional
+
+Flags/Tasks completed: All tasks in room (100%)
+Difficulty: Easy
