@@ -1,0 +1,6 @@
+today i ran log analysis on my ubuntu VM.
+
+-i found nothing suspisious.
+-ran some log commands and got their concepts.
+-everything was normal and all it contained were system files that i installed.
+

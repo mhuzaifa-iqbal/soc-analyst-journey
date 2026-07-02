@@ -1,0 +1,21 @@
+# Day 53 - Log Analysis Commands
+# These are the actual commands I ran on my Ubuntu VM
+
+# Check last 50 lines of auth log
+sudo cat /var/log/auth.log | tail -50
+
+# Search for failed login attempts
+sudo grep "Failed password" /var/log/auth.log
+
+# Check sudo usage (privilege escalation tracking)
+sudo grep "sudo" /var/log/auth.log | tail -20
+
+# Check installed packages (looking for suspicious tools)
+sudo grep "install" /var/log/dpkg.log | tail -20
+
+# Check system journal for errors
+sudo journalctl -n 50 --no-pager
+sudo journalctl | grep -i "error\|failed\|warning"
+
+# Check SSH activity
+sudo journalctl | grep -i "ssh" | tail -20
