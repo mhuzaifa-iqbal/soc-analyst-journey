@@ -1,0 +1,11 @@
+# Day 54 - IOC Investigation Results
+
+## IP 1: 45.33.32.156
+VirusTotal:3/91 security venders flagged this IP address milicious 
+AbuseIPDB: IP is reported 16 times , abuse confidence is 11%
+Verdict: low risk , monitor only , looks legit.
+
+## IP 2: 185.220.101.45
+VirusTotal: 15/91 security venders flagged this IP address milicious
+AbuseIPDB: IP is reported 6697 times , abuse confidence is 100%
+Verdict: milicious ip , block immediately.

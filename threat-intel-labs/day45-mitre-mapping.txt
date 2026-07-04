@@ -1,0 +1,13 @@
+# MITRE ATT&CK Mappings
+
+T1110 = Brute Force = Credential Access tactic
+T1110.001 = Password Guessing
+T1110.002 = Password Cracking
+T1110.003 = Password Spraying
+T1110.004 = Credential Stuffing
+T1566 = Phishing = Initial Access tactic
+T1059 = Command and Scripting Interpreter
+
+# Day 52 Splunk detection mapped to:
+T1110.001 - matched AN1275 and AN1276
+
