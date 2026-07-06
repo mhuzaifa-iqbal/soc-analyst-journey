@@ -1,0 +1,21 @@
+# Suspicious Process Patterns in Memory Forensics
+
+## Misspelled Legitimate Processes
+svchost.exe = legitimate
+svch0st.exe = malware
+scvhost.exe = malware
+svchost32.exe = malware
+
+## Wrong Location
+LEGITIMATE: C:\Windows\System32\svchost.exe
+MALICIOUS:  C:\Users\bob\Downloads\svchost.exe
+
+## Suspicious Parent/Child Relationships
+NORMAL:    explorer.exe → word.exe
+MALICIOUS: word.exe → cmd.exe → powershell.exe
+
+## Classic Malware Behaviors
+Fileless malware = only exists in RAM, never on disk
+Process injection = malware hiding inside legitimate process
+C2 beaconing = regular connections to external IP
+Credential dumping = accessing LSASS process

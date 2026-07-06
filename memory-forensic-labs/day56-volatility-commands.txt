@@ -1,0 +1,38 @@
+# Day 56 - Volatility 3 Commands Reference
+
+## Installation
+pip3 install volatility3 --break-system-packages
+export PATH=$PATH:/home/ubuntu/.local/bin
+
+## Basic Usage
+vol -f memory.dump windows.pslist
+vol -f memory.dump windows.pstree
+vol -f memory.dump windows.cmdline
+vol -f memory.dump windows.netstat
+vol -f memory.dump windows.dlllist
+vol -f memory.dump windows.malfind
+vol -f memory.dump windows.hashdump
+vol -f memory.dump windows.filescan
+
+## Investigation Workflow
+# Step 1 - get overview of processes
+vol -f memory.dump windows.pslist
+
+# Step 2 - check parent/child relationships
+vol -f memory.dump windows.pstree
+
+# Step 3 - check network connections
+vol -f memory.dump windows.netstat
+
+# Step 4 - hunt for injected code
+vol -f memory.dump windows.malfind
+
+# Step 5 - extract password hashes
+vol -f memory.dump windows.hashdump
+
+## Suspicious Patterns to Look For
+# Wrong process location
+# Misspelled process names
+# Weird parent/child relationships
+# Word/Excel spawning cmd.exe or powershell.exe
+# Unknown processes with network connections
