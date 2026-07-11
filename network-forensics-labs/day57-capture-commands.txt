@@ -1,0 +1,29 @@
+# Day 57 - Network Forensics Commands
+
+## Live Traffic Capture
+sudo tcpdump -i eth0 -w ~/capture.pcap -c 30
+sudo tcpdump -i eth0 -w ~/capture2.pcap -c 50
+
+## Traffic Generated for Capture
+ping 8.8.8.8 -c 15
+curl http://example.com
+curl http://httpbin.org/get
+
+## Wireshark Display Filters Used
+ip.addr == 8.8.8.8
+icmp
+dns
+
+## What I Found
+# capture.pcap  = ICMP ping traffic to 8.8.8.8
+# capture2.pcap = DNS queries for example.com and httpbin.org
+#                 TCP handshake packets
+#                 TLSv1.3 encrypted traffic
+
+## Key Wireshark Filters Reference
+ip.addr == x.x.x.x              filter by IP
+icmp                             ping traffic
+dns                              DNS queries
+tcp.port == 80                   HTTP
+tcp.port == 443                  HTTPS
+http.request.method == "POST"    POST requests only
