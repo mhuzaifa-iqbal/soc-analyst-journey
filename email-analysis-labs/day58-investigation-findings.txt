@@ -1,0 +1,8 @@
+-during the investigation i found some of the red flags in this email :
+
+1.suspicious domain.
+2.impersonating microsoft support.
+3.fake domain.
+4.reply goes back to attacker.
+5. SPF , DKIM , DMARC failed (malicious email)
+6.spam alert.

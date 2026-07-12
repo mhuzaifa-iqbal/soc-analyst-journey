@@ -1,0 +1,17 @@
+Delivered-To: victim@company.com
+Received: from mail.suspicious-domain.ru (mail.suspicious-domain.ru [185.220.101.45])
+        by mx.company.com with ESMTP id abc123
+        for <victim@company.com>; Thu, 1 Jan 2026 03:00:01 +0000
+From: "Microsoft Support" <support@suspicious-domain.ru>
+To: victim@company.com
+Reply-To: microsoft-support@gmail.com
+Subject: Urgent: Your Microsoft Account Has Been Compromised
+Message-ID: <random123@suspicious-domain.ru>
+MIME-Version: 1.0
+X-Originating-IP: 185.220.101.45
+Authentication-Results: mx.company.com;
+       spf=fail (sender IP is 185.220.101.45)
+       dkim=fail
+       dmarc=fail
+
+

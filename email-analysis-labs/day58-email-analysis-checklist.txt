@@ -1,0 +1,73 @@
+# Email Analysis Checklist - SOC Analyst
+
+## Step 1 - Check From Address
+Is display name different from actual email address?
+Is the domain legitimate or lookalike?
+
+## Step 2 - Check Reply-To
+Does Reply-To match the From address?
+If different = replies go to attacker
+
+## Step 3 - Check Authentication
+SPF = pass or fail?
+DKIM = pass or fail?
+DMARC = pass or fail?
+All three failing = confirmed suspicious
+
+## Step 4 - Check Originating IP
+Find X-Originating-IP in headers
+Check on AbuseIPDB
+Check on VirusTotal
+
+## Step 5 - Check Domain
+Check sending domain on VirusTotal
+Check on MXToolbox blacklists
+
+## Step 6 - Check URLs
+Scan any links on URLScan.io
+Never click directly
+
+## Step 7 - Check Attachments
+Upload to VirusTotal
+Get hash first, check hash
+
+## Step 8 - Build Verdict
+Combine all findings
+Document evidence
+Report and block# Email Analysis Checklist - SOC Analyst
+
+## Step 1 - Check From Address
+Is display name different from actual email address?
+Is the domain legitimate or lookalike?
+
+## Step 2 - Check Reply-To
+Does Reply-To match the From address?
+If different = replies go to attacker
+
+## Step 3 - Check Authentication
+SPF = pass or fail?
+DKIM = pass or fail?
+DMARC = pass or fail?
+All three failing = confirmed suspicious
+
+## Step 4 - Check Originating IP
+Find X-Originating-IP in headers
+Check on AbuseIPDB
+Check on VirusTotal
+
+## Step 5 - Check Domain
+Check sending domain on VirusTotal
+Check on MXToolbox blacklists
+
+## Step 6 - Check URLs
+Scan any links on URLScan.io
+Never click directly
+
+## Step 7 - Check Attachments
+Upload to VirusTotal
+Get hash first, check hash
+
+## Step 8 - Build Verdict
+Combine all findings
+Document evidence
+Report and block
