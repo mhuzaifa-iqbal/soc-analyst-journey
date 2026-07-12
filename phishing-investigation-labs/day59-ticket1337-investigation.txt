@@ -1,0 +1,45 @@
+TICKET #1337 - INVESTIGATION COMPLETE
+Analyst: Muhammad Huzaifa Iqbal
+Date: July 2026
+Verdict: CONFIRMED PHISHING EMAIL
+
+EVIDENCE FOUND:
+→ Originating IP: 185.220.101.45
+  - 100% abuse confidence on AbuseIPDB
+  - 6,707 abuse reports
+  - 16/91 VirusTotal vendors flagged
+
+→ Email Authentication:
+  - SPF = FAIL
+  - DKIM = FAIL
+  - DMARC = FAIL
+
+→ Social Engineering:
+  - Urgency language "reset immediately or account suspended"
+  - Impersonating IT Helpdesk
+
+→ Reply-To mismatch:
+  - Replies go to it-support-help@protonmail.com
+  - Not company IT department
+
+→ Suspicious domain:
+  - it-helpdesk-company.net not company domain
+  - company-it-reset.ru in email body
+
+→ Suspicious URL in body:
+  - http://company-it-reset.ru/reset?user=sarah.johnson
+
+SARAH'S STATUS:
+Sarah clicked the link — at risk of credential theft
+Device must be treated as potentially compromised
+
+IMMEDIATE ACTIONS REQUIRED:
+1. Isolate Sarah's machine from network immediately
+2. Reset Sarah's company credentials
+3. Block IP 185.220.101.45 on firewall
+4. Block domains it-helpdesk-company.net
+   and company-it-reset.ru
+5. Escalate to L2 for deeper investigation
+6. Check if other employees received same email
+7. Notify Sarah not to use her credentials until reset
+y
