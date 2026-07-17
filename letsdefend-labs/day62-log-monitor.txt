@@ -1,0 +1,16 @@
+#SOC LAB (LETS DEFEND)
+#SEVERITY ( MEDIUM )
+#THREAT ( MALWARE EXECUTION AND C2 CONNECTION)
+
+Alert : SOC - suspicious Powershell Script Executed 
+Host : tony ( 172.16.17.206)
+file : payload_1.ps1
+C2 IP : 161.22.46.148
+#investigation process:
+1.check hash on virus total- 32/62 detection , trojan.Powershell
+2.searched logs on letsdefend for source IP 172.16.17.206
+3.found dns querry to kionagranda.com
+4.confirm c2 connection and script execution.
+5.machine contained and closed as true positive.
+
+
