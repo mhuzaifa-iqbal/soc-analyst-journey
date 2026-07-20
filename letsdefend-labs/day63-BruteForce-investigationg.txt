@@ -1,0 +1,29 @@
+DAY 63 - INCIDENT RESPONSE LAB (LETSDEFEND)
+
+Alert: SOC176 - RDP Brute Force Detected
+Attacker IP: 218.92.0.56
+Victim: Matthew (172.16.17.148)
+Protocol: RDP (port 3389)
+Time: Mar 07, 2024, 11:44 AM
+
+Investigation Steps:
+1. Checked attacker IP on AbuseIPDB - 453k reports, 0% confidence (misleading)
+2. checked VirusTotal - 8/91 vendors flagged as malicious
+3. Confirmed known brute force attacker.
+4. Checked logs ,  multiple EventID 4625 (failed logon) from same IP
+5. No EventID 4624 (successful logon) found.
+6. unsuccessful attack , blocked by firewall.
+7. Single target.
+
+Verdict: True Positive - Brute Force Attack (Unsuccessful)
+
+#lessons
+AbuseIPDB 0% confidence does not mean safe
+Always cross-check with multiple tools
+Real attack that failed = still True Positive
+False Positive = alert fired but no real attack happened
+
+IR Phases Applied Today:
+Identification → alert fired
+Investigation → logs + threat intel
+Containment → case closed, attack was blocked
