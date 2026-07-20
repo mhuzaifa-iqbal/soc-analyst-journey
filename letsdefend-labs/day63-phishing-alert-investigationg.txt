@@ -1,0 +1,13 @@
+#PHISHING ALERRT LAB ( LETSDEFEND )
+
+- SMTP ADDRESS : 103.80.134.63
+- SOURCE ADDRESS : free@coffeehooop.com
+- DESTINATION ADDRESS :felix@letsdefend.io
+- E-MAIL SUBJECT : free coffee voucher
+
+#investigation
+- checked SMTp address on virustotal and found it malicious for phishing attempts.
+- checked for domain , its fake.
+- attacker is using social engineering technique (free gifts).
+
+---CASE IS CLOSED AS TRUE POSITIVE---
