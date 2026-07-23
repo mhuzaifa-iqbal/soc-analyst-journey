@@ -1,0 +1,15 @@
+Day 64 - Threat Hunting Lab (LetsDefend)
+
+Finding 1:
+After analysis we found that internal machine 172.16.17.14 was running 
+a PowerShell script on Aug 29, 2020 at 10:28 PM through MS Word which 
+is very suspicious. It was connecting to http://qstride.com/img/0/ 
+(198.100.45.154) - flagged 3/91 on VirusTotal.
+
+Finding 2:
+Internal IP 172.16.17.88 was connected to 81.169.145.105 which was 
+running a PowerShell script using MS Word which then connected to 
+http://thuening.de/cgi-bin/uo9wm/ - flagged 11/91 on VirusTotal.
+
+Both findings had no alerts fired - discovered through proactive threat hunting.
+Word document spawning PowerShell = malicious macro behavior.
