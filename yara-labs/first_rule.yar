@@ -1,0 +1,11 @@
+rule DetectEICARTest {
+    meta:
+        description = "Detects EICAR test file"
+        author = "Huzaifa"
+    
+    strings:
+        $eicar = "X5O!P%@AP[4\\PZX54(P^)7CC)7}"
+    
+    condition:
+        $eicar
+}

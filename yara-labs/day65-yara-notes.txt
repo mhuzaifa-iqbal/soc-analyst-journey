@@ -1,0 +1,5 @@
+#YARA LAB
+
+-Today i got to know that a threat/malware  can be eliminated even before it attacks the system through YARA rules.
+-Ran some test yara file against lab created malwares.
+
