@@ -1,0 +1,32 @@
+DAY 66 - SIGMA RULES INTRO
+
+What is Sigma:
+Universal detection rule format for log-based threat detection
+Write one rule → convert to any SIEM (Splunk, Elastic, Sentinel)
+
+YARA vs Sigma:
+YARA  = scans FILES for malicious patterns
+Sigma = scans LOGS for malicious behavior
+
+Sigma Rule Structure:
+title, status, description, author
+logsource → what logs to look at (Windows process creation etc)
+detection → what pattern to look for
+condition → when to fire the alert
+falsepositives → known safe cases
+level → severity (low/medium/high/critical)
+
+Rule Written Today:
+Detects PowerShell with -EncodedCommand, DownloadString, or IEX
+Converted to Splunk query:
+Image="*\\powershell.exe" CommandLine IN ("*-EncodedCommand*", "*DownloadString*", "*IEX*")
+
+Install Commands:
+sudo apt install sigma-cli
+pip install pysigma-backend-splunk --break-system-packages
+sigma-cli convert -t splunk --without-pipeline rule.yml
+
+SOC Relevance:
+Sigma rules shared across the security community
+One rule works in any SIEM
+Threat hunters write Sigma rules to detect new attack patterns

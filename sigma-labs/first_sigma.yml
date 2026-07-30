@@ -1,0 +1,19 @@
+title: Suspicious PowerShell Execution
+id: 1a2b3c4d-1234-5678-abcd-ef1234567890
+status: experimental
+description: Detects suspicious PowerShell with encoded commands or downloads
+author: Huzaifa
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        Image|endswith: '\powershell.exe'
+        CommandLine|contains:
+            - '-EncodedCommand'
+            - 'DownloadString'
+            - 'IEX'
+    condition: selection
+falsepositives:
+    - Legitimate administrator scripts
+level: high
