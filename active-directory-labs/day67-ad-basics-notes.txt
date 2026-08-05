@@ -1,0 +1,18 @@
+Day 67 - Active Directory Basics
+
+Explored local users and groups on Windows using lusrmgr.msc and PowerShell.
+
+Found 2 members in Administrators group: Administrator and LENOVO.
+Administrator account is disabled which is good security practice.
+
+Suspicious finding: iqbal account is enabled but has no last logon recorded.
+On a real system this could be a dormant backdoor account worth investigating.
+
+Guest and DefaultAccount are disabled - correct secure configuration.
+
+Key attack path: attackers target Administrators group to gain full machine control.
+In AD environments they go further - targeting Domain Admins for full company control.
+
+EventIDs to watch:
+4720 = new account created
+4732 = user added to admin group
