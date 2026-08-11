@@ -1,0 +1,29 @@
+ ACTIVE DIRECTORY ATTACKS & PRIVILEGE ESCALATION LAB
+
+Alert: SOC341 - Local Privilege Escalation via chroot CVE-2025-32463
+Host: ubuntu-dev (172.16.20.56)
+User: devuser → escalated to root
+
+Investigation Findings:
+1. Internal IP - no AbuseIPDB/VT results (expected)
+2. Log showed devuser downloaded exploit via wget:
+   https://raw.githubusercontent.com/pr0v3rbs/CVE-2025-32463_chwoot/main/sudo-chwoot.sh
+3. Exploit ran → gained root via sudo -R (CVE-2025-32463)
+4. "sudo -R woot woot" = attacker confirming root access
+5. No persistence techniques found
+
+Verdict: True Positive - Privilege Escalation by Exploitation
+MITRE: T1548.003 - Sudo and Sudo Caching Abuse
+
+Common AD Attack Techniques:
+Pass the Hash   → uses stolen hash to authenticate (EventID 4624, LogonType 3)
+Kerberoasting   → cracks service tickets offline (EventID 4769)
+DCSync          → mimics DC to steal password data (EventID 4662)
+Golden Ticket   → forges Kerberos tickets after KRBTGT compromise (EventID 4768)
+BloodHound      → maps AD attack paths visually
+
+Privilege Escalation Indicators (Linux):
+wget/curl downloading exploit scripts
+sudo commands with unusual flags
+New entries in /etc/group (wheel, sudo groups)
+Changes in /var/log/auth.log
