@@ -1,0 +1,40 @@
+ WINDOWS EVENT LOGS
+
+Three Main Log Categories:
+Security    → logins, privilege use, account changes
+System      → OS events, services
+Application → software events, crashes
+
+Critical EventIDs:
+4624 → Successful logon
+4625 → Failed logon (brute force)
+4648 → Explicit credentials (Pass the Hash)
+4672 → Special privileges (admin logon)
+4688 → Process created
+4698 → Scheduled task created (persistence)
+4720 → New user account created
+4732 → User added to Administrators group
+
+Logon Types:
+2  = Interactive (keyboard)
+3  = Network
+4  = Batch/Scheduled task
+5  = Service
+7  = Unlock
+10 = RDP
+
+My Machine Audit Results:
+4624 → 636 (normal)
+4625 → 0 (no brute force)
+4688 → 22 (normal processes)
+4698 → 0 (no persistence)
+4720 → 0 (no new accounts)
+4732 → 0 (no admin group changes)
+4672 → 593 (mostly SYSTEM, normal)
+
+SOC Relevance:
+Security log is #1 source for investigation
+4625 spike = brute force
+4720 + 4732 together = backdoor account creation
+4688 with suspicious parent process = malware execution
+4698 = attacker establishing persistence
