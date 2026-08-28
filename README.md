@@ -1,6 +1,6 @@
 # soc-analyst-journey
 
-##about me
+## about me
 -Name : huzaifa iqbal
 -track : blue team / soc analyst
 -university : bahria university karachi 
