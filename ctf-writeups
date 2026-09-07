@@ -1,0 +1,25 @@
+
+
+------------------------------- "Wireshark doo dooo do doo on picoCTF"-------------
+a network forensics challenge 
+where I had to:
+
+- Analyze a .pcapng packet capture file
+- Filter HTTP traffic in Wireshark
+- Extract hidden files from HTTP objects
+- Decode ROT13 cipher to find the flag
+
+Step 1 — Opened the PCAP file
+A .pcapng file is a recording of all network traffic. Like a security camera recording of every packet that went across the network.
+Step 2 — Filtered HTTP
+HTTP traffic is unencrypted — meaning we can read everything. We filtered to see only HTTP packets out of 987 total.
+
+Step 3 — Export HTTP Objects
+Wireshark can extract actual files that were transferred over HTTP. Like pulling attachments out of an email. We found files that were downloaded during that captured session.
+
+Step 4 — Found the suspicious file
+%2f = URL encoded / — that's a weird filename which made it stand out. Real attackers sometimes hide data in files with unusual names.
+
+Step 5 — ROT13 Decoding
+The content looked like gibberish — gurt svn vf cypbg — but it was ROT13 encoded. ROT13 shifts every letter 13 positions in the alphabet. It's a simple cipher used in CTFs.
+  
