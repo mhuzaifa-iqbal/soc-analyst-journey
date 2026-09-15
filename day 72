@@ -1,0 +1,12 @@
+Day 72 - picoCTF: First Find (General Skills - Easy)
+
+Challenge involved searching through a large zip file containing book files to find a hidden flag.
+
+Solved it using GUI file explorer first, then practiced the same using Linux commands:
+cd into directories, ls to list files, cat to read file contents.
+
+Faster approach for next time:
+grep -r "picoCTF" . 
+This searches recursively through all files in one command instead of manually navigating.
+
+Flag found and submitted successfully.
