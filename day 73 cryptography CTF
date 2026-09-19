@@ -1,0 +1,23 @@
+Challenge: StegoRSA - picoCTF (Cryptography - Easy)
+
+Files given:
+- image.jpg (photo of a key)
+- flag.enc (RSA encrypted flag)
+
+Step 1: Ran exiftool on image.jpg
+Command: exiftool image.jpg
+Finding: Found a large hex string hidden in the Comment metadata field
+
+Step 2: Decoded the hex string using Python
+Command: python3 -c "print(bytes.fromhex('HEX').decode())" > private_key.pem
+Finding: Hex decoded to a full RSA private key (-----BEGIN PRIVATE KEY-----)
+
+Step 3: Decrypted the flag using OpenSSL
+Command: openssl rsautl -decrypt -inkey private_key.pem -in flag.enc
+Result: Flag found successfully
+
+Key Lessons:
+- Always check file metadata with exiftool, not just the visible content
+- Steganography hides data where people don't look
+- RSA = two keys, public key locks, private key unlocks
+- Hex is just another way to encode text/data
