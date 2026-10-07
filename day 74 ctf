@@ -1,0 +1,36 @@
+DAY 74 - CTF CHALLENGE 4 - TRIVIAL FLAG TRANSFER PROTOCOL
+
+Platform: picoCTF
+Category: Forensics
+Difficulty: Medium
+
+WHAT IT WAS:
+PCAP file with TFTP traffic containing hidden files
+Flag was hidden using steganography inside picture3.bmp
+
+TOOLS USED:
+- Wireshark → filter: tftp
+- File → Export Objects → TFTP (extracted all files)
+- rot13.com → decoded plan file (ROT13)
+- steghide → extracted hidden flag from image
+
+STEPS:
+1. Open PCAP in Wireshark
+2. Filter for tftp traffic
+3. Export Objects → TFTP → Save All
+4. Read instruction.txt (encoded - nothing useful)
+5. Read plan.txt → ROT13 encoded
+6. Decoded plan → passphrase = DUEDILIGENCE
+7. Ran steghide extract on all 3 bmp files
+8. picture3.bmp contained flag.txt
+
+KEY COMMANDS:
+steghide extract -sf picture3.bmp
+(passphrase: DUEDILIGENCE)
+cat flag.txt
+
+CONCEPTS USED:
+- TFTP = Trivial File Transfer Protocol (no authentication)
+- ROT13 = shift letters 13 positions (encoding not encryption)
+- Steganography = hiding data inside innocent looking files
+- Export Objects in Wireshark = extract files from network capture
